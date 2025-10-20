@@ -1,0 +1,100 @@
+body{
+    height: 90vw;
+    margin: auto;
+    background-color: blanchedalmond;
+}
+
+.right{
+    background-color: green;
+}
+
+.wrong{
+    background-color: red;
+}
+
+.other{
+    background-color: gray;
+}
+
+.clicked{
+    border: 2px solid black;
+}
+
+[hidden] { 
+    display: none; 
+}
+
+header{
+    width:90%;
+    height: 15vh;
+    background-color: aqua;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+main{
+    width: 90%;
+    background-color: azure;
+    margin: auto;
+}
+
+article{
+    margin: auto;
+}
+
+
+#startBtn, #nextBtn, #resetBtn{
+    height: 80px;
+    width: fit-content;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    align-self: center;
+    border-radius: 20px;
+    border: 5px solid goldenrod;
+    color:darkgoldenrod;
+}
+
+#quizCard{
+    height: 70vh;
+    width: 80vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#question{
+    font-size: 2em;
+    font-weight: bolder;
+    text-align: center;
+    display: block;
+}
+
+#questionCard{
+    display: grid;
+    width: 100%;
+    height: 80%;
+    grid-template-columns: 1fr 1fr;
+    gap:30px;
+    margin:auto;
+}
+
+.answerBtn{
+    height:75%;
+    width:75%;
+    opacity: .6;
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 1.25em;
+    color: goldenrod;
+    font-weight: bold;
+    border: 10px double goldenrod;
+    margin: auto;
+}
+
+.answerBtn:hover{
+    opacity: .9;
+}
+
+

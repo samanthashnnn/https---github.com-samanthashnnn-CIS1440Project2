@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf Indification Quiz!</title>
+    <link rel="stylesheet" href="styles/main.css"></link>
+</head>
+<body>
+    <header>
+        <h1>Identileaf</h1>
+    </header>
+    <main>
+        <article id="menuCard">
+            <p>Can you identify these leaves?</p>
+            <button id="startBtn" type="button">Bring it on!</button>
+        </article>
+        <article id="quizCard" class="hidden">
+            <h1 id="question">What plant did this leaf come from?</h1>
+            <section id="questionCard" >
+                <button class="answerBtn" id="a" type="button"></button>
+                <button class="answerBtn" id="b" type="button"></button>
+                <button class="answerBtn" id="c" type="button"></button>
+                <button class="answerBtn" id="d" type="button"></button>            
+            </section>
+            <section id="controls">
+                <button id="nextBtn" type="button">Next Question</button>
+            </section>
+        </article>
+        <article id="endCard" class="hidden">
+            <p>congratz!</p>
+            <p id="scoreP"></p>
+            <button id="resetBtn" type="button">Try again!</button>
+        </article>
+    </main>
+    <footer></footer>
+    <script src="scripts/ap.js"></script>
+</body>
+</html>
