@@ -7,13 +7,25 @@ const choiceBtns = [
     document.getElementById("c"),
     document.getElementById("d")
 ];
-const restartBtn = document.getElementById("restartBtn");
+
+const leaves = [
+    document.getElementById("q1leaf"),
+    document.getElementById("q2leaf"),
+    document.getElementById("q3leaf"),
+    document.getElementById("q4leaf"),
+    document.getElementById("q5leaf"),
+    document.getElementById("q6leaf"),
+    document.getElementById("q7leaf"),
+    document.getElementById("q8leaf"),
+    document.getElementById("q9leaf")
+]
 
 const menuCard = document.getElementById("menuCard");
 const quizCard = document.getElementById("quizCard");
 const endCard = document.getElementById("endCard");
 
 const scoreP = document.getElementById("scoreP");
+const salute = document.getElementById("salute");
 
 //rand choices list
 let randAnswers = 
@@ -81,8 +93,8 @@ let quiz = [
 
 ];
 
-function show(el) { el.hidden = false; };
-function hide(el) { el.hidden = true; };
+function show(el) { el.hidden = false; el.showing = true;};
+function hide(el) { el.hidden = true; el.showing = false;};
 
 hide(quizCard);
 hide(endCard);
@@ -131,11 +143,16 @@ nextBtn.addEventListener("click", () =>{
 
 resetBtn.addEventListener("click", () =>{
     hide(endCard);
+    eraseHighlight();
     numCorrect = 0;
     numWrong = 0;
     question = 0;
-    choiceBtns.forEach(btn => btn.classList.remove("right", "wrong", "other"));
     fillQuizCard(choiceBtns);
+    hide(nextBtn);
+
+    choiceBtns.forEach(btn => btn.classList.remove("right", "wrong", "other"));
+    console.log("resetting");
+
 });
 
 
@@ -171,6 +188,7 @@ function fillQuizCard(choiceBtns){
     for(let i = 0; i < choiceBtns.length; i++){
         choiceBtns[i].textContent = choices[i];
     }
+
 };
 
 function checkAnswer(e){
@@ -179,6 +197,7 @@ function checkAnswer(e){
 
     if (clicked.textContent === correct){
         clicked.classList.add("right");
+        highlightLeafCorrect();
         
         choiceBtns.forEach(btn => {
             if(btn.textContent !== correct){
@@ -188,6 +207,7 @@ function checkAnswer(e){
         numCorrect++;
     } else {
         clicked.classList.add("wrong");
+        highlightLeafWrong();
         numWrong++;
 
         choiceBtns.forEach(btn => {
@@ -199,14 +219,32 @@ function checkAnswer(e){
         });
     }
     show(nextBtn);
+    
 }
-
 function calcScore(){
-    scoreP.textContent = "you have scored " + numCorrect + " out of " + quiz.length + " correct!";
+    if (numCorrect > 6){
+        salute.textContent =  "Ok, druid";
+    } else if (numCorrect >= 4 && numCorrect <= 6){
+        salute.textContent =  "That could've been better";
+    } else {
+        salute.textContent =  "Maybe touch grass?";
+    }
+
+    scoreP.textContent = "You scored " + numCorrect + " out of " + quiz.length + ".";
     show(endCard); 
 }
 
 
+function highlightLeafCorrect(){
+    leaves[question].classList.add("highlightLeafCorrect");
+}
 
+function highlightLeafWrong(){
+    leaves[question].classList.add("highlightLeafWrong");
+}
 
-
+function eraseHighlight(){
+    leaves.forEach(leaf => {
+        leaf.classList.remove("highlightLeafCorrect", "highlightLeafWrong");
+    });
+}

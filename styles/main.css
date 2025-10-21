@@ -1,37 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body{
-    height: 90vw;
+    height: 80vh;
     margin: auto;
-    background-color: blanchedalmond;
+    background-color: azure;
 }
 
-.right{
-    background-color: green;
-}
 
-.wrong{
-    background-color: red;
-}
 
-.other{
-    background-color: gray;
-}
 
-.clicked{
-    border: 2px solid black;
-}
-
-[hidden] { 
-    display: none; 
-}
 
 header{
-    width:90%;
-    height: 15vh;
-    background-color: aqua;
+    width:95vw;
+    height: fit-content;
+    background-color: azure;
     margin: auto;
     text-align: center;
-    padding: 10px;
+    padding: 10px auto 0 auto;
+    color: #0C4609;
+    font-weight: bolder;
 }
+
+#banner{
+    display: flex;
+    justify-content: space-around;
+}
+
+header img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.rotate{
+    transform: rotate(90deg);
+}
+
+.rotate180{
+    transform: rotate(180deg);
+}
+
+#q6leaf{
+    transform: rotate(130deg);
+}
+
+.highlightLeafCorrect{
+    filter: drop-shadow(0 0 4px green);
+}
+
+.highlightLeafWrong{
+    filter: drop-shadow(2px -2px 3px red);
+}
+
 
 main{
     width: 90%;
@@ -43,17 +67,41 @@ article{
     margin: auto;
 }
 
-
-#startBtn, #nextBtn, #resetBtn{
-    height: 80px;
+#menuCard{
+    margin: auto;
     width: fit-content;
     padding: 10px;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+}
+
+#endCard{
+    text-align: center;
+    padding: 20px;
+    font-size: 1.25em;
+}
+
+#endCard p{
+    margin: 10px auto;
+}
+
+#startBtn, #nextBtn, #resetBtn{
+    height: fit-content;
+    width: fit-content;
+    padding: 5px;
     font-size: 1em;
     font-weight: bold;
-    align-self: center;
-    border-radius: 20px;
-    border: 5px solid goldenrod;
-    color:darkgoldenrod;
+    border-radius: 7px;
+    border: 8px double #0C4609;
+    color:#0C4609;
+    opacity: .7;
+    margin: 20px auto;
+    display: block;
+}
+
+#startBtn:hover, #nextBtn:hover, #resetBtn:hover{
+    opacity: 1;
 }
 
 #quizCard{
@@ -62,15 +110,18 @@ article{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+
 }
 
 #question{
-    font-size: 2em;
+    font-size: 1.25em;
+    margin: 20px auto;
     font-weight: bolder;
     text-align: center;
     display: block;
 }
 
+/*just the button grid*/
 #questionCard{
     display: grid;
     width: 100%;
@@ -80,16 +131,18 @@ article{
     margin:auto;
 }
 
+
+
 .answerBtn{
-    height:75%;
+    height:50%;
     width:75%;
+    font-size: 1.15em;
     opacity: .6;
-    padding: 30px;
-    border-radius: 20px;
-    font-size: 1.25em;
-    color: goldenrod;
+    border-radius: 15px;
+    font-size: 1em;
+    color: #0C4609;
     font-weight: bold;
-    border: 10px double goldenrod;
+    border: 15px double #0C4609;
     margin: auto;
 }
 
@@ -98,3 +151,39 @@ article{
 }
 
 
+[hidden] { 
+    opacity: .1;
+    position: absolute;
+    top: -100px;
+    z-index: -3;
+}
+
+[showing]{
+    opacity: 1;
+    position: relative;
+    z-index: 4;
+}
+
+
+.right{
+    background-color: #60A13B;
+    color: #0C4609;
+    border: 15px double #0C4609;
+    opacity: .9;
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+.wrong{
+    background-color: #C40806;
+    color: #FD6E10;
+    border: 15px double #FD6E10;
+    opacity: .9;
+}
+
+.other{
+    background-color: azure;
+    border: 15px double black;
+    color: black;
+
+}

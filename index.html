@@ -8,15 +8,27 @@
 </head>
 <body>
     <header>
+        <section id="banner">
+            <img src="images/q1.png" alt=" question 1 leaf" id="q1leaf" class="rotate">
+            <img src="images/q2.png" alt=" question 2 leaf" id="q2leaf" class="rotate">
+            <img src="images/q3.png" alt=" question 3 leaf" id="q3leaf" class="rotate">
+            <img src="images/q4.png" alt=" question 4 leaf" id="q4leaf" class="rotate">
+            <img src="images/q5.png" alt=" question 5 leaf" id="q5leaf" class="rotate180">
+            <img src="images/q6.png" alt=" question 6 leaf" id="q6leaf">
+            <img src="images/q7.png" alt=" question 7 leaf" id="q7leaf" class="rotate180">
+            <img src="images/q8.png" alt=" question 8 leaf" id="q8leaf" class="rotate180">
+            <img src="images/q9.png" alt=" question 9 leaf" id="q9leaf" class="rotate180">
+        </section>
+        <br>
         <h1>Identileaf</h1>
     </header>
     <main>
         <article id="menuCard">
-            <p>Can you identify these leaves?</p>
+            <h2>Can you identify these leaves?</h2>
             <button id="startBtn" type="button">Bring it on!</button>
         </article>
         <article id="quizCard" class="hidden">
-            <h1 id="question">What plant did this leaf come from?</h1>
+            <p id="question">What plant did this leaf come from?</p>
             <section id="questionCard" >
                 <button class="answerBtn" id="a" type="button"></button>
                 <button class="answerBtn" id="b" type="button"></button>
@@ -28,7 +40,7 @@
             </section>
         </article>
         <article id="endCard" class="hidden">
-            <p>congratz!</p>
+            <p id="salute">congratz!</p>
             <p id="scoreP"></p>
             <button id="resetBtn" type="button">Try again!</button>
         </article>
