@@ -149,10 +149,7 @@ resetBtn.addEventListener("click", () =>{
     question = 0;
     fillQuizCard(choiceBtns);
     hide(nextBtn);
-
     choiceBtns.forEach(btn => btn.classList.remove("right", "wrong", "other"));
-    console.log("resetting");
-
 });
 
 
@@ -171,7 +168,6 @@ function fillQuizCard(choiceBtns){
 
     //put correct answer into randomly chosen button
     choices[tempFour] = quiz[question].correctAnswer;
-    console.log("the correct answer for number" + question + "is: " + choices[tempFour]);
 
     //fill empty spots with randomly chosen answer
     for(let i = 0; i < choices.length; i++){
